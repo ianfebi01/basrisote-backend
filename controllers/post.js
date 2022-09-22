@@ -19,3 +19,11 @@ exports.getAllPosts = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
+exports.deletePost = async (req, res) => {
+  try {
+    const data = await Post.findByIdAndRemove(req.params.id);
+    res.json(data);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
