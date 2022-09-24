@@ -19,8 +19,7 @@ exports.getAllPosts = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
-<<<<<<< HEAD
-=======
+
 exports.updatePost = async (req, res) => {
   try {
     const { type, category, header, images, body, user } = req.body;
@@ -43,7 +42,6 @@ exports.updatePost = async (req, res) => {
   }
 };
 
->>>>>>> main
 exports.deletePost = async (req, res) => {
   try {
     const data = await Post.findByIdAndRemove(req.params.id);
