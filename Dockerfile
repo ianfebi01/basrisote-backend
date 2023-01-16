@@ -1,10 +1,9 @@
-FROM node:16.15.0
+FROM node:alpine
 
-WORKDIR /usr/src/app
+WORKDIR /usr/app
 
-COPY package.json .
+COPY . /usr/app
 
-RUN npm install -g --silent
+RUN npm install
 
-COPY . .
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
